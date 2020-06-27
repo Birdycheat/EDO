@@ -11,16 +11,16 @@ typedef struct fonction_st
 
 void init_fonction(fonction * f, double, double, unsigned);
 
-void ecrire_fonction(char *, fonction);
+void ecrire_fonction(const char *, const fonction);
 
 void del_fonction(fonction *);
 
-void afficher_fonction_court(fonction);
+void afficher_fonction_court(const fonction);
 
-void deriver(fonction *, fonction);
+void deriver(fonction *, const fonction);
 
-double erreur(fonction, fonction);
+double erreur(const fonction, const fonction);
 
-unsigned comparable(fonction, fonction);
+unsigned comparable(const fonction, const fonction);
 
-void integrer(fonction *, fonction);
+void integrer(fonction *, const fonction);

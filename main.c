@@ -5,7 +5,7 @@
 #include "eq_diff.h"
 #include "methodes.h"
 
-double standard(double t, double y, double * Args, unsigned n)
+double standard(double t, double y, const double * Args, unsigned n)
 {
     if (n != 0)
     {
@@ -15,7 +15,7 @@ double standard(double t, double y, double * Args, unsigned n)
     return y;
 }
 
-double standard2(double t, double y, double * Args, unsigned n)
+double standard2(double t, double y, const double * Args, unsigned n)
 {
     if (n != 1)
     {
@@ -25,7 +25,7 @@ double standard2(double t, double y, double * Args, unsigned n)
     return sin(Args[0]*log(1 + fabs(y)));
 }
 
-double riccati(double t, double y, double * Args, unsigned Nargs)
+double riccati(double t, double y, const double * Args, unsigned Nargs)
 {
     if (Nargs != 3)
     {

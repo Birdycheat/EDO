@@ -4,7 +4,7 @@
 #include "eq_diff.h"
 #include "fonction.h"
 
-void euler_explicite(fonction * Ret, eq_diff E)
+void euler_explicite(fonction * Ret, const eq_diff E)
 {
     if (Ret == NULL)
     {
@@ -19,7 +19,7 @@ void euler_explicite(fonction * Ret, eq_diff E)
     }
 }
 
-void euler_implicite(fonction * Ret, eq_diff E)
+void euler_implicite(fonction * Ret, const eq_diff E)
 {
     if (Ret == NULL)
     {
@@ -48,7 +48,7 @@ void euler_implicite(fonction * Ret, eq_diff E)
     }
 }
 
-void crank_nicolson(fonction * Ret, eq_diff E)
+void crank_nicolson(fonction * Ret, const eq_diff E)
 {
     if (Ret == NULL)
     {
@@ -77,7 +77,7 @@ void crank_nicolson(fonction * Ret, eq_diff E)
     }
 }
 
-void RK4(fonction * Ret, eq_diff E)
+void RK4(fonction * Ret, const eq_diff E)
 {
     if (Ret == NULL)
     {

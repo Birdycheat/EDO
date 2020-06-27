@@ -2,7 +2,7 @@
 
 typedef struct eq_diff_st
 {
-    double (*f)(double, double, double *, unsigned);    // Fonction de l'équation y' = F(t,y)
+    double (*f)(double, double, const double *, unsigned);    // Fonction de l'équation y' = F(t,y)
     double y0;                                          // Condition initiale
     double a;                                           // Début de l'intervalle
     double T;                                           // Période étudié --> intervalle [a;a+T]
@@ -12,9 +12,9 @@ typedef struct eq_diff_st
 }eq_diff;
 
 
-void afficher_eq_diff(eq_diff);
+void afficher_eq_diff(const eq_diff);
 
-void init_eq_diff(eq_diff *, double (*)(double, double, double *, unsigned), char *);
+void init_eq_diff(eq_diff *, double (*)(double, double, const double *, unsigned), const char *);
 
 void del_eq_diff(eq_diff *);
 

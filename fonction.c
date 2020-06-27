@@ -3,7 +3,7 @@
 #include <math.h>
 #include "fonction.h"
 
-void afficher_fonction_court(fonction F)
+void afficher_fonction_court(const fonction F)
 {
     printf("Début de la période : %lf\nPrécision : %lf\nNombre de pas : %d\n", F.a, F.h, F.n);
 }
@@ -20,7 +20,7 @@ void init_fonction(fonction * F, double a, double h, unsigned n)
     F->n = n;
 }
 
-void ecrire_fonction(char * dest, fonction F)
+void ecrire_fonction(const char * dest, fonction F)
 {
     FILE * fdest;
     if ((fdest = fopen(dest, "w")) == NULL)
@@ -37,7 +37,7 @@ void ecrire_fonction(char * dest, fonction F)
     fclose(fdest);
 }
 
-void deriver(fonction * f_der, fonction f)
+void deriver(fonction * f_der, const fonction f)
 {
     if (f_der == NULL)
     {
@@ -65,7 +65,7 @@ void deriver(fonction * f_der, fonction f)
     }
 }
 
-void integrer(fonction * f_int, fonction f)
+void integrer(fonction * f_int, const fonction f)
 {
     if (f_int == NULL)
     {

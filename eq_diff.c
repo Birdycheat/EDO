@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "eq_diff.h"
 
-void afficher_eq_diff(eq_diff E)
+void afficher_eq_diff(const eq_diff E)
 {
     printf("fonction n°%p\ny0 = %lf\nAmplitude : %lf\nDébut de l'intervalle : %lf\nNombre de pas : %d\n\nNombre d'arguments : %d\n", E.f, E.y0, E.T, E.a, E.n, E.Nargs);
     printf("[%lf", E.Args[0]);
@@ -13,7 +13,7 @@ void afficher_eq_diff(eq_diff E)
     printf("]\n");
 }
 
-void init_eq_diff(eq_diff * F, double (*f)(double, double, double *, unsigned), char * src)
+void init_eq_diff(eq_diff * F, const double (*f)(double, double, const double *, unsigned), const char * src)
 {
     FILE * SRC = fopen(src, "r");
     if (SRC == NULL)
